@@ -1,15 +1,15 @@
 Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
-Version:	1.3.5.2
+Version:	1.3.6
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
-Source0:	http://www.lintux.cx/~kalum/%{name}-%{version}.tar.gz
-URL:		http://www.lintux.cx/~kalum/prozilla.html
+Source0:	http://prozilla.delrom.ro/tarballs/%{name}-%{version}.tar.gz
+URL:		http://prozilla.delrom.ro/	
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,19 +24,19 @@ congestion prevention methods which slow down a single connection
 based download.
 
 %description -l pl
-ProZilla jest programem typu "download accellerator" dla Linuxa 
-napisanym, aby przyspieszyæ proces ¶ci±gania plików. Czêsto daje 
+ProZilla jest programem typu "download accellerator" dla Linuxa
+napisanym, aby przyspieszyæ proces ¶ci±gania plików. Czêsto daje
 zwiêkszenie prêdko¶ci do 200-300%. Wspiera protoko³y HTTP i FTP, a
-jego teoretyczne dzia³anie jest bardzo proste. Program otwiera wiele 
-po³±czeñ do servera i ka¿de z nich ¶ci±ga tylko czê¶æ programu.
-Dziêki temu mozliwe jest ominiêcie ograniczeñ transferu nak³adanych
-na pojedyncze po³±czenie.
+jego teoretyczne dzia³anie jest bardzo proste. Program otwiera wiele
+po³±czeñ do servera i ka¿de z nich ¶ci±ga tylko czê¶æ programu. Dziêki
+temu mozliwe jest ominiêcie ograniczeñ transferu nak³adanych na
+pojedyncze po³±czenie.
 
 %prep
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 %configure2_13
 %{__make}
 
