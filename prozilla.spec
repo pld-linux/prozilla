@@ -3,17 +3,13 @@ Name:		prozilla
 Version:	1.3.5
 Release:	1
 License:	GPL
-Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
+Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
+Group(pl):	Aplikacje/Sieciowe
 Source0:	http://www.lintux.cx/~kalum/%{name}-%{version}.tar.gz
 URL:		http://www.lintux.cx/~kalum/prozilla.html
-BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 ProZilla is a new download accellerator program written for Linux to
