@@ -8,6 +8,7 @@ License:	GPL
 Group:		Applications/Networking
 Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{version}.tar.gz
 # Source0-md5:	65864dfe72f5cb7d7e595ca6f34fc7d7
+# Source0-size:	152755
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://prozilla.genesys.ro/
 BuildRequires:	autoconf
