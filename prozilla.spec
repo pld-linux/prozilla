@@ -25,7 +25,7 @@ congestion prevention methods which slow down a single connection
 based download.
 
 %description -l pl
-ProZilla jest programem typu "download accellerator" dla Linuxa
+ProZilla jest programem typu "download accellerator" dla Linuksa
 napisanym, aby przyspieszyæ proces ¶ci±gania plików. Czêsto daje
 zwiêkszenie prêdko¶ci do 200-300%. Wspiera protoko³y HTTP i FTP, a
 jego teoretyczne dzia³anie jest bardzo proste. Program otwiera wiele
