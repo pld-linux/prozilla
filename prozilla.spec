@@ -41,8 +41,8 @@ pojedyncze po³±czenie.
 rm -f missing
 CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
