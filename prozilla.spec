@@ -48,12 +48,12 @@ automake -a -c -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__install} -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
 	$RPM_BUILD_ROOT%{_sysconfdir}
 
-%{__install} src/proz 	$RPM_BUILD_ROOT%{_bindir}
-%{__install} prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
-%{__install} man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
+install src/proz 	$RPM_BUILD_ROOT%{_bindir}
+install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
+install man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
 
