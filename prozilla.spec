@@ -6,10 +6,10 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
-Source0:	http://prozilla.delrom.ro/packages/prozilla/tarballs/%{name}-%{version}.tar.gz
+Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{version}.tar.gz
 # Source0-md5:	65864dfe72f5cb7d7e595ca6f34fc7d7
 Patch0:		%{name}-ac_fixes.patch
-URL:		http://prozilla.delrom.ro/
+URL:		http://prozilla.genesys.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
