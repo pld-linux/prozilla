@@ -9,7 +9,10 @@ Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	http://prozilla.delrom.ro/tarballs/%{name}-%{version}.tar.gz
+Patch0:		%{name}-ac_fixes.patch
 URL:		http://prozilla.delrom.ro/	
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,10 +37,15 @@ pojedyncze po³±czenie.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+rm -f missing
 CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
-%configure2_13
+aclocal
+autoconf
+automake -a -c
+%configure
 %{__make}
 
 %install
