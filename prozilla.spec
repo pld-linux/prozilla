@@ -1,13 +1,13 @@
 Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
-Version:	1.3.6
-Release:	3
+Version:	1.3.7.3	
+Release:	1	
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{version}.tar.gz
-# Source0-md5:	65864dfe72f5cb7d7e595ca6f34fc7d7
+# Source0-md5:	88f0d9d88aa7628239dae08804dcd550
 # Source0-size:	152755
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://prozilla.genesys.ro/
