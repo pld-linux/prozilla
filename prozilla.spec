@@ -8,7 +8,7 @@ License:	GPL
 Group:		Applications/Networking
 Source0:	http://prozilla.delrom.ro/tarballs/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
-URL:		http://prozilla.delrom.ro/	
+URL:		http://prozilla.delrom.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 	$RPM_BUILD_ROOT%{_sysconfdir}
 
 %{__install} src/proz 	$RPM_BUILD_ROOT%{_bindir}
-%{__install} prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf 
+%{__install} prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
 %{__install} man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
