@@ -2,6 +2,7 @@ Summary:	An advanced download manager
 Name:		prozilla
 Version:	1.3.5
 Release:	1
+Epoch:		1
 License:	GPL
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
