@@ -6,7 +6,7 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
-Source0:	http://prozilla.delrom.ro/tarballs/%{name}-%{version}.tar.gz
+Source0:	http://prozilla.delrom.ro/packages/prozilla/tarballs/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://prozilla.delrom.ro/
 BuildRequires:	autoconf
