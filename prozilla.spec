@@ -31,8 +31,8 @@ ProZilla jest programem typu "download accellerator" dla Linuksa
 napisanym, aby przyspieszyæ proces ¶ci±gania plików. Czêsto daje
 zwiêkszenie prêdko¶ci do 200-300%. Wspiera protoko³y HTTP i FTP, a
 jego teoretyczne dzia³anie jest bardzo proste. Program otwiera wiele
-po³±czeñ do servera i ka¿de z nich ¶ci±ga tylko czê¶æ programu. Dziêki
-temu mozliwe jest ominiêcie ograniczeñ transferu nak³adanych na
+po³±czeñ do serwera i ka¿de z nich ¶ci±ga tylko czê¶æ programu. Dziêki
+temu mo¿liwe jest ominiêcie ograniczeñ transferu nak³adanych na
 pojedyncze po³±czenie.
 
 %prep
