@@ -8,7 +8,7 @@ Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	http://www.lintux.cx/~kalum/%{name}-%{version}.tar.gz
 URL:		http://www.lintux.cx/~kalum/prozilla.html
-BuildRequires:	gtk+-devek
+BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
