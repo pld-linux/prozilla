@@ -55,14 +55,13 @@ install src/proz 	$RPM_BUILD_ROOT%{_bindir}
 install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
 install man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/prozilla.conf
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
