@@ -2,7 +2,7 @@ Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
 Version:	1.3.6
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
