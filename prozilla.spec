@@ -12,6 +12,8 @@ BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 ProZilla is a new download accellerator program written for Linux to
@@ -33,12 +35,12 @@ CFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
+%{__install} -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
 	$RPM_BUILD_ROOT%{_sysconfdir}
 
-install src/proz 	$RPM_BUILD_ROOT%{_bindir}
-install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf 
-install man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
+%{__install} src/proz 	$RPM_BUILD_ROOT%{_bindir}
+%{__install} prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf 
+%{__install} man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
 
@@ -48,6 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/prozilla.conf
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/prozilla.conf
 %{_mandir}/man*/*
