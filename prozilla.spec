@@ -1,6 +1,6 @@
 Summary:	An advanced download manager
 Name:		prozilla
-Version:	1.3.2 
+Version:	1.3.3.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
