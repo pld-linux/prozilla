@@ -42,7 +42,7 @@ rm -f missing
 CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure
 %{__make}
 
