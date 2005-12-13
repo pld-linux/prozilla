@@ -42,7 +42,7 @@ pojedyncze po³±czenie.
 
 %build
 rm -f missing
-CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
+CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %{__aclocal}
 %{__autoconf}
 %{__automake}
