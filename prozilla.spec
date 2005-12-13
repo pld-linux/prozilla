@@ -2,7 +2,7 @@ Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
 Version:	1.3.7.4
-Release:	1	
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Networking
@@ -65,6 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/prozilla.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/prozilla.conf
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
