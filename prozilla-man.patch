@@ -1,0 +1,21 @@
+--- prozilla-2.0.3/man/proz.1.orig	2006-01-22 23:26:51.000000000 +0100
++++ prozilla-2.0.3/man/proz.1	2006-01-22 23:29:00.000000000 +0100
+@@ -103,12 +103,15 @@
+ can be placed in /etc/make.conf to use ProZilla to download your system updates. This example will not do FTP searches for files < 500Kb, uses the text interface (handier with portage) and saves the files in your ${DISTDIR} (normally /usr/portage/distfiles)
+ .SH "FILES"
+ .TP 
+-"/etc/prozilla.conf"
+-The global config file
++"~/.prozilla"
++The per\-user config directory
+ .TP 
+-"~/.prozrc"
++"~/.prozilla/prozconfig"
+ The per\-user config file
+ .TP 
++"~/.prozilla/debug.log"
++The per\-user debug log
++.TP 
+ "~/.netrc"
+ A file which can be used to provide ProZilla with hosts, accounts and passwords
+ .SH "BUGS"

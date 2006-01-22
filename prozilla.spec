@@ -1,15 +1,16 @@
 Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
-Version:	1.3.7.4
+Version:	2.0.3
 Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Networking
-Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{version}.tar.gz
-# Source0-md5:	b594b55b1b49a8eca2505173cc1bfc44
+Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{version}.tar.bz2
+# Source0-md5:	0a3b9c179ffd7390e52a2b6f6f98111d
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-Oopt.patch
+Patch2:		%{name}-man.patch
 URL:		http://prozilla.genesys.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,10 +40,11 @@ pojedyncze po³±czenie.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
-CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+CPPFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -55,8 +57,8 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
 	$RPM_BUILD_ROOT%{_sysconfdir}
 
 install src/proz 	$RPM_BUILD_ROOT%{_bindir}
-install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
-install man/prozilla.1	$RPM_BUILD_ROOT%{_mandir}/man1
+#install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
+install man/proz.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 
 %clean
@@ -64,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ANNOUNCE AUTHORS CREDITS ChangeLog FAQ NEWS README TODO
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/prozilla.conf
+%doc AUTHORS CREDITS ChangeLog docs/FAQ README TODO
+# %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/prozilla.conf
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
