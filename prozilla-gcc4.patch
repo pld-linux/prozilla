@@ -9,3 +9,52 @@
  
    connection_t *connection;
    download_t *download;
+--- prozilla-2.0.3/src/download_win.cpp.orig	2005-12-11 18:21:33.000000000 +0100
++++ prozilla-2.0.3/src/download_win.cpp	2006-01-24 20:21:03.489470750 +0100
+@@ -599,7 +599,7 @@
+ 	    {
+ 
+ 	      fprintf (stdout,
+-		       "%2.2d  %-30.30s  %15.15s  %10Ld\n",
++		       "%2.2d  %-30.30s  %15.15s  %10zd\n",
+ 		       i + 1, download->pconnections[i]->u.host,
+ 		       proz_connection_get_status_string (download->
+ 							  pconnections
+@@ -608,7 +608,7 @@
+ 		       (download->pconnections[i]));
+ 	    }
+ 
+-	  fprintf (stdout, "Total Bytes received %Ld Kb\n",
++	  fprintf (stdout, "Total Bytes received %zd Kb\n",
+ 		   proz_download_get_total_bytes_got (download) / 1024);
+ 
+ 
+@@ -648,7 +648,7 @@
+       //WGET looks like this:
+       //xx% [=======>    ] nnn,nnn,nnn XXXX.XXK/s ETA hh:mm:ss
+ 
+-      fprintf (stdout, "  %.2lf%% %lldKb/%lldkb %0.3fKb/s ETA %s           \r", 
++      fprintf (stdout, "  %.2lf%% %zdKb/%zdkb %0.3fKb/s ETA %s           \r", 
+ 	       ((float)totalDownloaded) / ((float)totalFile / 100), 
+ 	       totalDownloaded, totalFile, (float)aveSpeed, timeLeft);
+       fflush (stdout);
+--- prozilla-2.0.3/libprozilla/src/ftpsearch.c.orig	2005-12-12 01:05:49.000000000 +0100
++++ prozilla-2.0.3/libprozilla/src/ftpsearch.c	2006-01-24 20:19:46.908684750 +0100
+@@ -119,7 +119,7 @@
+       (char *) kmalloc(lycos_url_len + strlen(request->file_name) + 300);
+ 
+   sprintf(lycos_url_buf,
+-	  "%s?form=advanced&query=%s&doit=Search&type=Exact+search&hits=%d&matches=&hitsprmatch=&limdom=&limpath=&limsize1=%Ld&limsize2=%lld&f1=Host&f2=Path&f3=Size&f4=-&f5=-&f6=-&header=none&sort=none&trlen=20",
++	  "%s?form=advanced&query=%s&doit=Search&type=Exact+search&hits=%d&matches=&hitsprmatch=&limdom=&limpath=&limsize1=%zd&limsize2=%zd&f1=Host&f2=Path&f3=Size&f4=-&f5=-&f6=-&header=none&sort=none&trlen=20",
+ 	  ftps_loc, request->file_name, num_req_mirrors,
+ 	  request->file_size, request->file_size);
+ 
+@@ -159,7 +159,7 @@
+       (char *) kmalloc(filesearching_url_len + strlen(request->file_name) + 300);
+ 
+   sprintf(filesearching_url_buf,
+-	  "%s?q=%s&l=en&t=f&e=on&m=%d&o=n&s=on&s1=%Ld&s2=%Ld&d=&p=&p2=&x=10&y=14",
++	  "%s?q=%s&l=en&t=f&e=on&m=%d&o=n&s=on&s1=%zd&s2=%zd&d=&p=&p2=&x=10&y=14",
+ 	  ftps_loc, request->file_name, num_req_mirrors,
+ 	  request->file_size, request->file_size);
+ 
