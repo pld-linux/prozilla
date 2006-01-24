@@ -2,7 +2,7 @@ Summary:	An advanced download manager
 Summary(pl):	Zaawansowany program do ¶ci±gania plików
 Name:		prozilla
 Version:	2.0.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2
 Group:		Applications/Networking
@@ -11,6 +11,7 @@ Source0:	http://prozilla.genesys.ro/downloads/prozilla/tarballs/%{name}-%{versio
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-Oopt.patch
 Patch2:		%{name}-man.patch
+Patch3:		%{name}-gcc4.patch
 URL:		http://prozilla.genesys.ro/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,6 +42,7 @@ pojedyncze po³±czenie.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 rm -f missing
