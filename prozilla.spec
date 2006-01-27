@@ -12,9 +12,11 @@ Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-Oopt.patch
 Patch2:		%{name}-man.patch
 Patch3:		%{name}-gcc4.patch
+Patch4:		%{name}-opt.patch
 URL:		http://prozilla.genesys.ro/
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake >= 1.4
+BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,14 +45,27 @@ pojedyncze po³±czenie.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
+
+# kill AC_PROG_LIBTOOL
+head -n 667 libprozilla/acinclude.m4 > tmp
+mv tmp libprozilla/acinclude.m4
 
 %build
-rm -f missing
-CPPFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+cd libprozilla
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
-%configure
+cd ..
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure \
+	CPPFLAGS="-I/usr/include/ncurses"
 %{__make}
 
 %install
@@ -61,7 +76,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1} \
 install src/proz 	$RPM_BUILD_ROOT%{_bindir}
 #install prozrc.sample	$RPM_BUILD_ROOT%{_sysconfdir}/prozilla.conf
 install man/proz.1	$RPM_BUILD_ROOT%{_mandir}/man1
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
