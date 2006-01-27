@@ -1,0 +1,36 @@
+--- prozilla-2.0.3/libprozilla/configure.in.orig	2005-12-12 01:06:00.000000000 +0100
++++ prozilla-2.0.3/libprozilla/configure.in	2006-01-27 21:24:20.701344750 +0100
+@@ -168,7 +168,7 @@
+   AC_SUBST(MSGFMT)
+ 
+ 
+-CFLAGS="-Wall -O0 -D_REENTRANT"
++CFLAGS="$CFLAGS -Wall -D_REENTRANT"
+ 
+ if test "x$GCC" != "xyes"; then
+   enable_compiler_warnings = "no";
+@@ -176,11 +176,11 @@
+ 
+ if test "x$enable_compiler_warnings" != "xno"; then
+   if test "x$enable_compiler_warnings" = "xmin"; then
+-    CFLAGS="$CFLAGS -g -ansi -pedantic"
++    CFLAGS="$CFLAGS -ansi -pedantic"
+   fi
+   if test "x$enable_compiler_warnings" = "xyes"; then
+     CFLAGS="$CFLAGS \
+--g -ansi -pedantic -W -Wtraditional -Wshadow -Wpointer-arith \
++-ansi -pedantic -W -Wtraditional -Wshadow -Wpointer-arith \
+ -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion \
+ -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes \
+ -Wmissing-declarations -Wnested-externs -Winline"
+--- prozilla-2.0.3/configure.in.orig	2005-12-12 01:07:52.000000000 +0100
++++ prozilla-2.0.3/configure.in	2006-01-27 21:23:52.247566500 +0100
+@@ -82,7 +82,7 @@
+ AC_TYPE_SIZE_T
+ TYPE_SOCKLEN_T
+ 
+-CFLAGS="-Wall -O2 -D_REENTRANT"
++CFLAGS="$CFLAGS -Wall -D_REENTRANT"
+ 
+ 
+ dnl ==============
