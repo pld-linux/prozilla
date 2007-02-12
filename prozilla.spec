@@ -1,5 +1,5 @@
 Summary:	An advanced download manager
-Summary(pl):	Zaawansowany program do ¶ci±gania plików
+Summary(pl.UTF-8):   Zaawansowany program do Å›ciÄ…gania plikÃ³w
 Name:		prozilla
 Version:	2.0.4
 Release:	1
@@ -30,14 +30,14 @@ downloads a part of the file, thus defeating existing internet
 congestion prevention methods which slow down a single connection
 based download.
 
-%description -l pl
+%description -l pl.UTF-8
 ProZilla jest programem typu "download accellerator" dla Linuksa
-napisanym, aby przyspieszyæ proces ¶ci±gania plików. Czêsto daje
-zwiêkszenie prêdko¶ci do 200-300%. Wspiera protoko³y HTTP i FTP, a
-jego teoretyczne dzia³anie jest bardzo proste. Program otwiera wiele
-po³±czeñ do serwera i ka¿de z nich ¶ci±ga tylko czê¶æ programu. Dziêki
-temu mo¿liwe jest ominiêcie ograniczeñ transferu nak³adanych na
-pojedyncze po³±czenie.
+napisanym, aby przyspieszyÄ‡ proces Å›ciÄ…gania plikÃ³w. CzÄ™sto daje
+zwiÄ™kszenie prÄ™dkoÅ›ci do 200-300%. Wspiera protokoÅ‚y HTTP i FTP, a
+jego teoretyczne dziaÅ‚anie jest bardzo proste. Program otwiera wiele
+poÅ‚Ä…czeÅ„ do serwera i kaÅ¼de z nich Å›ciÄ…ga tylko czÄ™Å›Ä‡ programu. DziÄ™ki
+temu moÅ¼liwe jest ominiÄ™cie ograniczeÅ„ transferu nakÅ‚adanych na
+pojedyncze poÅ‚Ä…czenie.
 
 %prep
 %setup -q
