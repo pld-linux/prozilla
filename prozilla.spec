@@ -2,7 +2,7 @@ Summary:	An advanced download manager
 Summary(pl.UTF-8):	Zaawansowany program do ściągania plików
 Name:		prozilla
 Version:	2.0.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2
 Group:		Applications/Networking
